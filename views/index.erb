@@ -1,13 +1,30 @@
 
 <ul>
-  <% @recipes.each do |recipe| %>
-    <li>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li style="background-color:papayawhip;">
+      <h4>
       <%= recipe.name =%>
-      <p></p>
+      </h4>
+      <br>
+      <br>
+      <i style="color:navy;">
       <%= recipe.description =%>
+      </i>
+      <br>
+      <br>
+      <b>
+      <%= "You have tried this recipe :)" if recipe.marked =%>
+      </b>
+      <br>
+      <br>
+      <a href="/mark/<%= index =%>">Mark this recipe</a>
+      <br>
+      <a href="/destroy/<%= index =%>">Delete this recipe</a>
       <p></p>
     </li>
   <% end %>
 </ul>
-
+<a href = "/new">Add a recipe </a>
+<br>
+<a href = "/inspiration">Get some inspiration!</a>
 

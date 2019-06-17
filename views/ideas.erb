@@ -1,0 +1,12 @@
+<ul>
+  <% @ideas.each do |idea| %>
+    <li style="background-color:papayawhip;">
+      <h4>
+      <%= idea.name =%>
+      </h4>
+      <%= idea.description =%>
+      <br>
+      <a >Add this recipe</a>
+    </li>
+  <% end %>
+</ul>
